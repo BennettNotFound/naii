@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>视频展示页面</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .video-container {
+            text-align: center;
+        }
+        video {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <h1>其实你被骗了，视频卡了吗？</h1>
+        <video controls autoplay muted loop>
+            <source src="./nvgup.mp4" type="video/mp4">
+            您的浏览器不支持视频标签。
+        </video>
+    </div>
+
+    <script>
+        // 刷新计数逻辑
+        function checkRefreshCount() {
+            // 获取当前刷新次数
+            let refreshCount = localStorage.getItem('refreshCount');
+            
+            // 如果没有记录，初始化为0
+            if (!refreshCount) {
+                refreshCount = 0;
+            } else {
+                refreshCount = parseInt(refreshCount);
+            }
+            
+            // 增加刷新次数
+            refreshCount++;
+            
+            // 保存新的刷新次数
+            localStorage.setItem('refreshCount', refreshCount);
+            
+            // 检查是否达到3次
+            if (refreshCount === 3) {
+                alert("/rcd 04h1a9p8p6y5n2e1w5y2e0a2r6");
+                // 重置计数器，以便下次使用
+                localStorage.setItem('refreshCount', 0);
+            }
+        }
+        
+        // 页面加载时执行检查
+        window.onload = function() {
+            checkRefreshCount();
+        };
+    </script>
+</body>
+</html>
